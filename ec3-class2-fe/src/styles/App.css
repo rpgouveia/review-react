@@ -1,7 +1,17 @@
 .container {
-    background-color: rgb(128, 128, 128);
-    color: rgb(0, 0, 0);
-    width: 50%;
-    padding: 10px;
-    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: rgb(30, 30, 30);
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.container h3 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #C41C3B;
+    text-align: center;
 }

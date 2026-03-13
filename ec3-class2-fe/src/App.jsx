@@ -14,37 +14,27 @@ function App(){
   function getData(){
     fetch("https://jsonplaceholder.typicode.com/users")
     .then(response => response.json())
-    .then((data) => {setData(data)})
+    .then((data) => {setData(data)});
   }
 
   function onClickCard(user){
-    console.log("clicou ",user)
-    setmodalIsOpen(!modalIsOpen)
-    setuserClicked(user)
+    console.log(user);
+    setmodalIsOpen(true);
+    setuserClicked(user);
   }
 
   // Efeitos
   useEffect(() => {
-    console.log("Componente montado!")
-    getData()
+    console.log("Componente montado!");
+    getData();
   },[])
 
-  useEffect(() => {
-    console.log("data mudou!")
-    console.log(data)
-  },[data])
-
-  useEffect(() => {
-    console.log("user mudou!")
-    console.log(userClicked)
-  },[userClicked])
-
   // Ao renderizar uma lista dinâmica cada elemento precisa de uma chave única
-return (<>
+  return (<>
   <div className="container">
     <h3>Lista de usuários:</h3>
       {data.map(item => <DataList key={item.id} onClickCard={onClickCard} item={item}></DataList>)}
-      {modalIsOpen && <Modal user={userClicked}></Modal>}
+      {modalIsOpen && <Modal user={userClicked} onClose={() => {setmodalIsOpen(false); setuserClicked(null)}}></Modal>}
   </div>
 </>)
 }

@@ -1,11 +1,22 @@
+import "../styles/Modal.css"
+
 function Modal(props){
     return (
-        <>
-            <h3>Meu modal</h3>
-            Name:{props.user?.name}
-            Phone:{props.user?.phone}
-            Website:{props.user?.website} 
-        </>
+        <div className="modalOverlay" onClick={props.onClose}>
+            <div className="modalContent" onClick={(e) => e.stopPropagation()}>
+                <h3>Informações do Usuário</h3>
+                <div className="modalInfo">
+                    <div><strong>Nome:</strong> {props.user?.name}</div>
+                    <div><strong>Email:</strong> {props.user?.email}</div>
+                    <div><strong>Telefone:</strong> {props.user?.phone}</div>
+                    <div><strong>Website:</strong> {props.user?.website}</div>
+                    <div><strong>Empresa:</strong> {props.user?.company?.name}</div>
+                </div>
+                <button className="closeButton" onClick={props.onClose}>
+                    Fechar
+                </button>
+            </div>
+        </div>
     )
 }
 

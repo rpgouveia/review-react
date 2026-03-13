@@ -1,5 +1,21 @@
 .containerCard {
-    background-color: firebrick;
-    padding: 5px;
-    margin: 5px;
+    background: linear-gradient(135deg, #C41C3B 0%, #8B0000 100%);
+    padding: 16px;
+    margin: 12px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+    line-height: 1.8;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.containerCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(196, 28, 59, 0.4);
+}
+
+.containerCard:active {
+    transform: translateY(-2px);
 }
